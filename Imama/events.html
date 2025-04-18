@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleV.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <title>Our Events</title>
+</head>
+<body>
+    <div class="first">
+        <div class="navigation">
+            <img src="logo.png" alt="logo">
+            <nav>
+               <ul>
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="events.html">Our Events</a></li>
+                <li><a href="donations.html">Donate Now</a></li>
+                <li><a href="contact.html">Contact</a></li>
+               </ul>
+           </nav> 
+         </div>
+    
+         <div class="events">
+          <h1>Upcoming <br>Events</h1>
+          <p id="text"></p>
+          <img src="kids.png" alt="kids">
+         </div>
+    </div>
+
+
+     <div class="dates">
+        <div class="one">
+            <p1>03<br>
+            <span>March</span>
+        </p1>
+            <h2>Skill Development Workshops</h2>
+            <p2>On sessions focusing on literacy, numeracy, creative arts, and vocational training to equip children with valuable skills for the future.</p2>
+        </div>
+        <div class="two"><p1>26<br>
+            <span>March</span>
+        </p1>
+            <h2>Nutrition & Health Awareness Programs</h2>
+            <p2>Informative sessions and health camps promoting proper nutrition, hygiene, and overall wellness for children and their families..</p2></div>
+        <div class="three"><p1>12<br>
+            <span>May</span>
+        </p1>
+            <h2>Volunteer Appreciation Day</h2>
+            <p2>Recognizing the contributions of our dedicated volunteers and partners who help make our work possible. Their efforts play a crucial role in ensuring the success of our programs, and we celebrate their hard work and commitment to making a difference.</p2>
+        </div>
+        <div class="four"><p1>30<br>
+            <span>May</span>
+        </p1>
+            <h2>Fundraising & Charity Drives</h2>
+            <p2>Opportunities to contribute to our cause through donation drives, sponsorship events, and charity initiatives that help sustain our programs.</p2>
+        </div>
+     </div>
+
+     <div class="info">
+        <h2>Get Involved by hitting the volunteer button below</h2>
+        <button class="volunteer" onclick="window.location.href='volunteer.html'">Volunteer</button>
+     </div>
+     <script>
+      let text = "At Imama Nutrition Community and Skills Development, we host a variety of events aimed at empowering children, Our events provide opportunities for learning, collaboration, and fun, ensuring that every child receives the support they need to thrive.";
+        let i = 0;
+        let speed = 0.3;
+        let pauseTime = 30;
+
+        function typeWriter() {
+            if (i < text.length) {
+                document.getElementById("text").innerHTML += text.charAt(i);
+                let delay = text.charAt(i) === " " ? speed : pauseTime;
+                i++;
+                setTimeout(typeWriter, delay);
+            }
+        }
+        typeWriter();
+     </script>
+</body>
+</html>

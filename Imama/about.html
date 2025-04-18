@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <link rel="stylesheet" href="styling.css">
+    <title>About us</title>
+</head>
+<body>
+    <div class="navigation">
+        <img src="logo.png" alt="logo">
+        <nav>
+           <ul>
+            <li><a class="active" href="index.html">Home</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="events.html">Our Events</a></li>
+            <li><a href="donations.html">Donate Now</a></li>
+            <li><a href="contact.html">Contact</a></li>
+           </ul>
+       </nav> 
+     </div>
+     <div class="content">
+        <h1>Who we are</h1>
+        
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                
+                <div class="swiper-slide card">
+                    <div class="text">
+                        <h2>Who we are</h2>
+                        <p><span>Imama Nutrition Community and Skills Development</span> is a non-governmental organization (NGO) committed to making a positive impact in the lives of children and communities in need.</p>
+                    </div>
+                    <img src="img6.jpg" alt="image">
+                </div>
+
+                <div class="swiper-slide card">
+                    <div class="text">
+                        <h2>Our Mission</h2>
+                        <p>Our mission is to empower children by equipping them with essential skills and knowledge to succeed in life. We recognize that proper nutrition is a fundamental requirement for learning and development, which is why we ensure that children receive wholesome, balanced meals to fuel their education.</p>
+                    </div>
+                    <img src="img7.jpg" alt="image">
+                </div>
+    
+                <div class="swiper-slide card">
+                    <div class="text">
+                        <h2>Our Vision</h2>
+                        <p>We envision a world where every child reaches their full potential, nourished in body, mind, and spirit. Through our programs, we aim to build a foundation that enables children to develop resilience, problem-solving abilities, and leadership skills. By equipping them with these essential life skills, we empower them to rise above obstacles and become valuable members of their communities.</p>
+                    </div>
+                    <img src="img9.jpg" alt="image">
+                </div>
+    
+                <div class="swiper-slide card">
+                    <div class="text">
+                        <h2>What We Do</h2>
+                        <p>At <span>Imama Nutrition Community and Skills Development</span>, We offer educational workshops and hands-on training in various areas, including literacy, numeracy, and creative arts.We provide nutritious meals to ensure that children receive the essential nourishment required for healthy growth and academic success. Proper nutrition is vital in maintaining concentration, energy levels, and overall well-being. We organize fun and interactive activities, such as sports, storytelling, music, and art programs. These activities help children develop social skills, boost self-esteem, and enhance their emotional well-being.</p>
+                    </div>
+                    <img src="img10.jpg" alt="image">
+                </div>
+    
+            </div>
+    
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        loop: true,
+        spaceBetween: 30,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
+</script>   
+</body>
+</html>

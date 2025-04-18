@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="styleC.CSS">
+    <title>Contact Us</title>
+</head>
+<body>
+    <div class="navigation">
+        <img src="logo.png" alt="logo">
+        <nav>
+           <ul>
+            <li><a class="active" href="index.html">Home</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="events.html">Our Events</a></li>
+            <li><a href="donations.html">Donate Now</a></li>
+            <li><a href="contact.html">Contact</a></li>
+           </ul>
+       </nav> 
+     </div> 
+     <h1>Contact Details</h1>
+     <div class="main">
+        <div class="address">
+        <p><i class='bx bx-building-house' style='color:#18eff7'  ></i><span>Address</span><br>
+         Old Marine Drive
+        <br>
+        Western Cape, Cape Town<br>
+        8001<br>
+        South Africa 
+        <br>
+        <br>
+        <i class='bx bxs-phone' style='color:#2bffff'  ></i><span>Phone Number</span><br>
+            +27 21 555 5555
+        <br>
+        <br>
+        <i class='bx bx-envelope' style='color:#2bffff' ></i><span>Email Address</span><br>
+            info@volunteer.org
+        </p>
+     </div>
+
+
+     <div class="message">
+        <form id="Form">
+            <h2>Send us a message</h2>
+            <input type="text" class="name" id="name" placeholder="Full Name"><br>
+            <input type="email" class ="email" id="email" placeholder="Email Address"><br>
+            <input type="text" class="text" id="text" placeholder="Type your message"><br>
+            <input type="submit" class="button" value="Send" onclick="sendMessage()">
+        </form>
+     </div>
+    </div>
+     <script>
+        document.getElementById("Form").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            var isValid = true;
+            var name = document.getElementById("name").value.trim();
+            var email = document.getElementById("email").value.trim();
+            var message = document.getElementById("text").value.trim();
+
+            if(name === ""){
+                isValid = false;
+                alert('enter your name')
+            }
+            if(email === ""){
+                isValid = false;
+                alert('enter your email')
+                }else if(!/\S+@\S+\.\S+/.test(email)){
+                    isValid = false;
+                    alert('enter valid email')
+                }
+                if(message === ""){
+                    isValid = false;
+                }
+                if(isValid){
+                    alert('Thank you, Your message has been sent ' + name);
+                    document.getElementById("Form").reset();
+                }
+        });
+     </script>
+</body>
+</html>

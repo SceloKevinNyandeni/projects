@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    scrollbar-width: none;
+}
+
+.navigation{
+    display: flex;
+    justify-content: center;
+}
+.navigation img{
+    position: absolute;
+    transform: translate(-550px);
+    width: 100px;
+}
+.navigation ul{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    margin-top: 45px;
+    margin-bottom: 10px;
+}
+
+.navigation li{
+    align-items: center;
+    display: flex;
+    
+}
+.navigation li a{
+    font-size: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bolder;
+    text-decoration: none;
+    color: #004040;
+}
+span{
+  color: orange;
+}
+.volunteer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    margin: 2.5em auto 2em;
+    padding: 120px;
+    height: 250px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0.1)), 
+    url('img3.jpg') center/cover no-repeat;
+    cursor: pointer;
+    overflow: auto;
+    box-shadow: 0 5px 5px 0 rgb(154, 149, 149);
+}
+.volunteer h2{
+  font-size: 30px;
+  color: white;
+  text-align: center;
+}
+.volunteer p{
+  font-size: 16px;
+  color: white;
+
+}
+
+.abt-Btn{
+  background-color: orange;
+  width: 170px;
+  height: 50px;
+  border: none;
+  border-radius: 25px;
+  background-color: orange;
+  cursor: pointer;
+  margin-top: 20px;
+  color: white;
+  font-weight: 400;
+}
+.volunteer:hover{
+    filter: brightness(90%);
+    transition: 1.5s;
+    transition: ease-in-out;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #004040;
+    margin-top: 40px;
+  }
+  
+  .line{
+    padding: 1px;
+    width: 80%;
+    margin-top: 20px;
+    background-color: #004040;
+    border-radius: 30px;
+  }
+  .about h2 {
+    position: absolute;
+    transform: translate(-300px, 140px)
+  }
+  
+  .about ul {
+    position: relative;
+    transform: translate(200px, 100px); 
+    
+  }
+
+  .about li {
+    margin-left: 10px;
+  }
+.images{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(220px);
+  gap: 1rem;
+  padding-bottom: 20px;
+  box-shadow: 0 5px 5px 0 #5c3470;
+}
+.images img{
+  box-shadow: 2px 4px 4px 2px #d4cfd6;
+}

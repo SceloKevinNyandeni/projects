@@ -1,0 +1,118 @@
+/* General Styling */
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    margin: 0px;
+    padding: 25px;
+    background-color: white;
+}
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('img5.jpg');
+    width: 100%;
+    color: navy; /* All text in navy blue */
+}
+
+.logo img{
+    width: 80px;
+    height: auto;
+    cursor: pointer;  
+  }
+/* Navigation Bar */
+.navbar {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    background-color: white; /* Semi-transparent baby blue */
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navbar li {
+    display: inline;
+}
+
+.navbar a {
+    text-decoration: underline; /* Underline all buttons */
+    color: navy; /* Navy blue links */
+    font-weight: bold;
+    padding: 14px 20px;
+    display: block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar a:hover, .navbar a.active {
+    background-color: navy; /* Slightly darker blue */
+    color: white; /* White text on hover */
+    text-decoration: underline; /* Keep underline on hover */
+}
+
+
+/* Main Content Styling */
+.contact-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(204, 230, 255, 0.9); /* Semi-transparent blue */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.contact-container h1 {
+    text-align: center;
+    color: navy; /* Navy blue heading */
+}
+
+.contact-container p {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 18px;
+    color: navy; /* Navy blue paragraph text */
+}
+
+/* Form Styling */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    padding: 10px;
+    border: 1px solid #99ccff;
+    border-radius: 5px;
+    font-size: 16px;
+    color: navy; /* Navy blue text inside input fields */
+}
+
+.contact-form button {
+    background-color: navy;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #005c99;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(179, 224, 255, 0.8);
+    color: navy; /* Navy blue footer text */
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}

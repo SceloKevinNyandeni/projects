@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    scrollbar-width: none;
+    z-index: 1;
+}
+body{
+    height: 150vh;
+    background: linear-gradient(270deg, #6895c5, #193136, #0f3f76,#6f1774 ) ;
+    background-size: 400% 400%;
+    animation: gradientAnimation 6s infinite alternate;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.navigation{
+    display: flex;
+    justify-content: center;
+}
+.navigation img{
+    position: absolute;
+    transform: translate(-550px);
+    width: 100px;
+}
+.navigation ul{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    margin-top: 45px;
+    margin-bottom: 10px;
+}
+
+.navigation li{
+    align-items: center;
+    display: flex;
+    
+}
+.navigation li a{
+    font-size: 15px;
+    font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    color: white;
+}
+.main{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 100px;
+    min-height: 100vh;
+    color: white;
+
+}
+.address{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.message{
+    display: block;
+    padding: 100px;
+    height: 250px;
+    border: 2px solid white;
+    border-radius: 40px;
+    box-shadow: 4px 7px 7px 4px rgba(0, 0, 0, 0.2);
+    background: transparent ;
+    backdrop-filter: blur(15px);
+}
+
+span{
+    color: aqua;
+}
+
+ h2{
+    color: rgb(0, 0, 0);
+    margin-bottom: 50px;
+
+}
+
+.name, .email, .text{
+    color: white;
+    width: 310px;
+    height: 40px;
+    margin-top: 20px;
+    border: 0;
+    border-bottom: 3px solid black;
+    background: transparent;
+    
+}
+
+input::placeholder{
+    color: white;
+    font-style: italic;
+}
+.button{
+    background: white;
+    width: 100px;
+    padding: 15px;
+    border: 0;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-top: 20px;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleF.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="first">
+        <div class="navigation">
+            <img src="logo.png" alt="logo">
+            <nav>
+               <ul>
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="events.html">Our Events</a></li>
+                <li><a href="donations.html">Donate Now</a></li>
+                <li><a href="contact.html">Contact</a></li>
+               </ul>
+           </nav> 
+         </div>
+        <div class="volunteer">
+            <div class="formInfo">
+                <h1>Fill in the Form to Volunteer with Us</h1>
+                <form>
+                    <label for="name" class="nameL">Name:</label><br>
+                    <input type ="text" id="name" class="name" name="name" placeholder="Enter your name" required><br>
+                    <label for="surnanme" class="snameL">Surname:</label><br>
+                    <input type="text" id="surname" class="sname" name="surname" placeholder="Enter your surname" required><br>
+                    <label for="email" class="emailL">Email:</label><br>
+                    <input type="email" id="email" class="email" name="email" placeholder="Enter your email" required><br>
+                    <select name="date" id="eventDate" class="slct"><br>
+                    <option value="datesAvail" id="datesAvail">Select a date for an upcoming Event</option>
+                    <option value="sdw">Skills Development Workshop</option>
+                    <option value="nhap">Nutrition & Health Awareness Programs</option>
+                    <option value="vap">Volunteer Appreciation Day</option>
+                    <option value="fcd">Fundraising & Charity Drives</option>
+                    </select>
+                    <button type="submit" class="btn">Submit</button>
+                </form>
+             </div>
+        </div>
+
+</body>
+</html>

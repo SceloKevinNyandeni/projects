@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+    scrollbar-width: none;
+}
+
+.navigation{
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    background: linear-gradient(270deg, #348f8f, #004040);
+    background-size: 400% 400%;
+    animation: changeColor 9s infinite alternate;
+}
+@keyframes changeColor{
+    0%{
+        background-position: 0% 50%;
+    }
+
+    100%{
+        background-position: 100% 50%;
+    }
+}
+
+.navigation img{
+    position: absolute;
+    transform: translate(-550px);
+    width: 100px;
+}
+.navigation ul{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    margin-top: 45px;
+    margin-bottom: 10px;
+}
+
+.navigation li{
+    align-items: center;
+    display: flex;
+    
+}
+.navigation li a{
+    font-size: 15px;
+    font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: white;
+}
+.content{
+    display: flex;
+    margin-top: 30px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+h2{
+    font-size: 20px;
+    text-align: center;
+}
+
+.swiper {
+    width: 80%;
+    margin: auto;
+    padding: 20px 0;
+}
+
+.swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(212, 211, 211);
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    gap: 20px;
+}
+
+.swiper-slide .text {
+    flex: 1;
+    text-align: left;
+}
+
+.text h2{
+    font-size: 20px;
+    color: orange;
+}
+
+.swiper-slide img {
+    width: 40%;
+    border-radius: 10px;
+}
+
+/* Swiper Navigation Buttons */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #2f4f2f;
+    font-weight: 100;
+}
+
+/* Swiper Pagination */
+.swiper-pagination {
+    position: relative;
+    margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .swiper-slide {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .swiper-slide img {
+        width: 80%;
+    }
+
+    .swiper-slide .text {
+        text-align: center;
+    }
+}

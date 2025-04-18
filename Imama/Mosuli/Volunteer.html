@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer - Imama Nutrition Community & Skill Development Centre</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="content">            
+            <div class="logo">
+                <img src="logo.jpg" alt="logo">
+            </div>
+        </div>
+        <nav>
+            <ul class="navbar">
+                <li><a href="index.html"><i class='bx bx-home-heart'></i> Home</a></li>
+                <li><a href="about.html"><i class='bx bx-user'></i>About Us</a></li>
+                <li><a href="sponsors.html"><i class='bx bxs-group'></i>Sponsors</a></li>
+                <li><a href="donations.html"><i class='bx bxs-donate-heart'></i>Donations</a></li>
+                <li><a href="events.html"><i class='bx bxs-calendar-event'></i></i>Events</a></li>
+                <li><a class="active" href="volunteer.html"><i class='bx bxs-hand'></i>Volunteer</a></li>
+                <li><a href="ContactUsPage.html"><i class='bx bxs-contact'></i>Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="volunteer-container">
+        <section class="hero-section">
+            <h1>Join Our Volunteer Program</h1>
+            <p>Make a meaningful impact in the lives of children and our community by becoming a volunteer today!</p>
+        <input type="button" value="Volunteer" class="scroll-button" onclick="handleButtonClick('.volunteer-form')">
+        </section>
+
+        <section class="why-volunteer">
+            <h2>Why Volunteer With Us?</h2>
+            <ul>
+                <li>Support child nutrition and development programs.</li>
+                <li>Help organize educational and fun activities for children.</li>
+                <li>Contribute to the growth of our soup kitchen and community events.</li>
+                <li>Engage with fellow volunteers and build a strong community network.</li>
+            </ul>
+        </section>
+
+<div class="images">
+    <img src="img2.jpg"  alt="Volunteer Image 2" height="300px", width="300px">
+    <img src="img3.jpg"  alt="Volunteer Image 3" height="300px", width="300px">
+    <img src="img4.jpg"  alt="Volunteer Image 4" height="300px", width="300px">
+</div>
+
+        <section class="how-to-join">
+            <h2>How to Join</h2>
+            <ol>
+                <li>Fill out the volunteer sign-up form below.</li>
+                <li>Attend an introductory meeting with our team.</li>
+                <li>Choose a program area you're passionate about (kitchen, activities, logistics, etc.).</li>
+                <li>Start making a difference!</li>
+            </ol>  
+        </section>
+
+        <section class="volunteer-form">
+            <h2>Volunteer Sign-Up Form</h2>
+            <form action="#" method="POST" class="volunteer-signup">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
+
+                <label for="availability">Availability:</label>
+                <input type="text" id="availability" name="availability" placeholder="Days you are available" required>
+
+                <label for="message">Why do you want to volunteer?</label>
+                <textarea id="message" name="message" placeholder="Tell us your motivation..." rows="6" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+<script src="script.js"></script>
+    <footer>
+        <p>&copy; 2024 Imama Nutrition Community & Skill Development Centre. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
