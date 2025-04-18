@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+body{
+    display: grid;
+    place-content: center;
+    align-items: center;
+    height: 100vh;
+}
+h1{
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 32px;
+   font-weight: 200;
+   text-align: center;
+   margin-top: 22px;
+}
+
+p, a{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    margin-top: 1%;
+}
+
+.main{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    border: 2px #000;
+    min-width: 400px;
+    box-shadow: 4px 2px 5px 5px rgba(0,0,0,0.2);
+}
+form{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    gap: 15px;
+}
+
+.label{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+.stdDet{
+    min-width: 300px;
+    min-height: 50px;
+    border: none;
+    border-bottom: 1.7px solid #939393;
+}
+
+.radioBtn{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.radioBtn .radio{
+    height: 15px;
+    width: 15px;
+}
+
+.btn{
+    height: 37px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color: hsl(216, 77%, 48%);
+    font-size: 12px;
+}
+

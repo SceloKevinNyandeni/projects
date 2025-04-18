@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    scrollbar-width: none;
+    box-sizing: border-box;
+}
+
+body{
+height: 100%;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 5%;
+}
+
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    color: hsl(216, 77%, 48%);
+}
+
+.navigation ul li{
+   display: inline-block;
+   align-items: center;
+   justify-content: center;
+   padding: 10px 20px;
+}
+
+.navigation ul li a{
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    color: rgb(0, 144, 233);
+}
+
+.btnContact{
+    padding: 9px 25px;
+    border: none;
+    border-radius: 34px;
+    background-color: rgba(0, 144, 233, 0.7);
+    color: white;
+    cursor: pointer;
+    transition: smooth ease-in-out 3s;
+}
+
+.btnContact:hover{
+    transition: smooth ease-in-out 3s;
+    background-color: rgba(0, 144, 233, 0.4);
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 150px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0.1)), 
+    url('shuttle2.webp') center/cover no-repeat;
+}
+
+h2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: hsl(216, 77%, 48%);
+}
+
+p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    font-weight: 300;
+    color: white;
+}
+
+span{
+    color: hsl(63, 97%, 55%);
+    font-weight: bold; 
+}
+
+.btnTrack{
+    padding: 19px 55px;
+    margin-top: 40px;
+    border: none;
+    border-radius: 34px;
+    background-color: rgba(0, 144, 233, 0.7);
+    color: white;
+    cursor: pointer;
+    transition: smooth ease-in-out 3s;  
+}
+
+.btnTrack:hover{
+    transition: smooth ease-in-out 3s;
+    background-color: rgba(0, 144, 233, 0.4);
+}
+
+h3{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 2em;
+    color: hsl(216, 77%, 48%);
+}
+
+.card-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.card{
+    width: 325px;
+    background-color: #f0f0f0;
+    border: 1.7px solid hsl(0, 3%, 59%);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+}
+
+.card-content{
+    padding: 16px;
+}
+
+.card-content p{
+    color: hsl(0, 0%, 0%);
+}
+
+span{
+    color: hsl(216, 77%, 48%);
+    font-style: italic;
+}

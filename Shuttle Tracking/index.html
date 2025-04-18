@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Sign Up</title>
+</head>
+<body>
+    <div class="main">
+        <h1>Sign Up</h1>
+        <p>sign up to continue</p>
+      <form id="form" action="profile.html">
+         <input type="text" name="fname" class="stdDet" id="fname" placeholder="Name">
+
+         <input type="text" name="sname" class="stdDet" id="sname" placeholder="Surname">
+
+         <input type="number" name="age" class="stdDet" id="age" placeholder="Age">
+
+         <input type="number" name="stdNum" class="stdDet" id="stdNum" placeholder="Student Number">
+
+         <input type="email" name="stdEmail" class="stdDet" id="stdEmail" placeholder="Student Email">
+
+         <div class="radioBtn">
+            <label class="label">Male</label>
+            <input type="radio" id="male" name="gender" class="radio" value="Male">
+
+            <label class="label">Female</label>
+            <input type="radio" id="female" name="gender" class="radio" value="Female"> 
+         </div>
+
+         <button type="submit" class="btn" id="btn">Sign Up</button>
+         <a href="login.html">Already have an account? click here</a>
+      </form>
+    </div>
+<script>
+
+   //retrieving elements 
+
+    let form = document.getElementById('form');
+    let name = document.getElementById("fname");
+    let surname = document.getElementById("sname");
+    let age = document.getElementById("age");
+    let option1 = document.getElementById("male");
+    let option2 = document.getElementById("female");
+    let studNum = document.getElementById("stdNum");
+    let studEmail = document.getElementById("stdEmail");
+   
+    form.addEventListener('submit', (e) => {
+     //error handling
+     let errors = [];
+        let fnameValue = fname.value.trim();
+        let snameValue = sname.value.trim();
+        let ageValue = age.value.trim();
+        let genderValue = document.querySelector('input[name="gender"]:checked')?.value;
+        let studNumValue = studNum.value.trim();
+        let studEmailValue = studEmail.value.trim();
+
+        if (!fnameValue) errors.push("Please enter your first name");
+        if (!snameValue) errors.push("Please enter your surname");
+        if (!ageValue) errors.push("Please enter your age");
+        if (!genderValue) errors.push("Please select your gender");
+        if (!studNumValue) errors.push("Please enter your student number");
+        if (studNumValue.length !== 9) errors.push("Student number must be 9 characters");
+        if (!studEmailValue) errors.push("Please enter your student email");
+
+        if (errors.length > 0) {
+            e.preventDefault();
+            alert(errors.join("\n"));
+        } else {
+            // Redirect to profile page with query parameters
+            let params = new URLSearchParams({ 
+                fname: fnameValue, 
+                sname: snameValue, 
+                age: ageValue, 
+                gender: genderValue, 
+                stdNum: studNumValue, 
+                stdEmail: studEmailValue
+            }).toString();
+            window.location.href = "main.html?" + params;
+        }
+    });
+
+</script>
+</body>
+</html>

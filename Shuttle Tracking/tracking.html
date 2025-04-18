@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    
+    <title>Map at a Specified Location</title>
+    <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
+    <link rel="stylesheet" href="styleT.css">
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
+  </head>
+  
+  <body>
+    <div class="header">
+      <h1>Shuttle Tracking</h1>
+      <div class="navigation">
+          <ul>
+              <li><a href="main.html">Home</a></li>
+              <li><a href="tracking.html">Shuttles</a></li>
+              <li><a href="profile.html">Profile</a></li>
+          </ul>
+      </div>
+          <button class="btnContact">Contact</button>
+  </div>
+
+    <div id="map"></div>
+
+    <script>
+      // Function to move the map and add a marker at user's location
+const successfulCallback = (position) => {
+  console.log(position);
+
+  const latitude = position.coords.latitude;
+  const longitude = position.coords.longitude;
+
+  console.log("Latitude: " + latitude + ", Longitude: " + longitude);
+
+  moveMapToCapeTown(latitude, longitude);
+};
+
+// Error handler for geolocation
+const errorHandler = (error) => {
+  console.error("Error getting location:", error);
+};
+
+// Get user's current position
+navigator.geolocation.getCurrentPosition(successfulCallback, errorHandler);
+
+// Function to move the map and place a marker
+function moveMapToCapeTown(lat, lng) {
+  map.setCenter({ lat: lat, lng: lng });
+  map.setZoom(14);
+
+  // Create a marker for the user's location
+  function customMarker(lat, lng, iconUrl ){
+    var icon = new H.map.Icon(iconUrl, { size: { w: 40, h: 40 } });
+    var marker = new H.map.Marker({ lat: lat, lng: lng });
+
+// Add marker to the map
+map.addObject(marker);
+  }
+  customMarker(lat, lng, 'https://img.icons8.com/emoji/48/000000/red-circle-emoji.png');
+
+}
+
+// Set your HERE API key
+window.apiKey = "EvrhpO7VPdWSKt9M_KHbA3dXAXni23Zz771qBi5UDrU"; // Replace with your actual API key
+
+// Initialize HERE Maps
+var platform = new H.service.Platform({
+  apikey: window.apiKey
+});
+
+var defaultLayers = platform.createDefaultLayers();
+
+// Initialize the map, centered on Cape Town by default
+var map = new H.Map(
+  document.getElementById('map'),
+  defaultLayers.vector.normal.map, {
+    center: { lat: -33.9249, lng: 18.4241 }, // Default Cape Town coordinates
+    zoom: 14,
+    pixelRatio: window.devicePixelRatio || 1
+  }
+);
+
+// Make the map responsive
+window.addEventListener('resize', () => map.getViewPort().resize());
+
+// Enable map interactivity
+var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+var ui = H.ui.UI.createDefault(map, defaultLayers);
+
+    </script>
+  </body>
+</html>

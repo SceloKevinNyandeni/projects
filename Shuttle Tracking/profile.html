@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleP.css">
+    <title>Document</title>
+</head>
+<body>
+
+    
+
+    <div class="profile">
+        <h1>Profile</h1>
+    <div class="fullName">
+        <label class="label">Name:</label>
+        <input type="text" class="name" id="fname" readonly>
+
+        <label class="label">Surname:</label>
+        <input type="text" class="sname"  id="sname" readonly>
+    </div>    
+
+        <label class="label">Age:</label>
+        <input type="number" class="inputs" id="age" readonly>
+
+        <label class="label">Gender:</label>
+        <input type="text" class="inputs" id="gender" readonly>
+
+        <label class="label">Campus:</label>
+        <input type="text" class="inputs" id="campus" readonly>
+
+        <label class="label">Faculty:</label>
+        <input type="text" class="inputs" id="faculty" readonly>
+
+        <label class="label">Name of Accomodation:</label>
+        <input type="text" class="inputs" id="accomodation" readonly>
+
+        <label class="label">Student Number:</label>
+        <input type="text" class="inputs" id="Student_Number" readonly>
+
+        <label class="label">Student Email:</label>
+        <input type="email" class="inputs" id="Student_Email" readonly>
+    <div class="btns">
+        <button class="btn" id="btn" onclick="change()">Continue to main page</button>
+        <button class="btn" id="btn" onclick="change2()">Update whole Profile</button>
+    </div>
+    </div>
+
+    <script>
+       
+       function change() {
+        window.location.href = "main.html";
+       }
+       function change2() {
+        let name;
+        let surname;
+        let age;
+        let gender;
+        let campus;
+        let faculty;
+        let accomodation;
+        let student_number;
+        let student_email;
+
+        name = window.prompt("Update your name");
+        surname = window.prompt("Update your surname");
+        age = window.prompt("Update your age");
+        gender = window.prompt("Update your gender");
+        campus = window.prompt("Update your campus");
+        faculty = window.prompt("Update your faculty");
+        accomodation = window.prompt("Update your accomodation");
+        student_number = window.prompt("Update your student number");
+        student_email = window.prompt("Update your student email");
+
+        document.getElementById("fname").value = name;
+        document.getElementById("sname").value = surname;
+        document.getElementById("age").value = age;
+        document.getElementById("gender").value = gender;
+        document.getElementById("campus").value = campus;
+        document.getElementById("faculty").value = faculty;
+        document.getElementById("accomodation").value = accomodation;
+        document.getElementById("Student_Number").value = student_number;
+        document.getElementById("Student_Email").value = student_email;
+
+        document.getElementById("btn").disabled = false;
+       }
+       let campus;
+       let faculty;
+       let accomodation;
+
+
+       campus = window.prompt("Enter your campus");
+       faculty = window.prompt("Enter your faculty");
+       accomodation = window.prompt("Enter your accomodation's name");
+       document.getElementById("campus").value = campus;
+       document.getElementById("faculty").value = faculty;
+       document.getElementById("accomodation").value = accomodation;
+
+       let errors = [];
+
+       if(!campus){
+        errors.push("Campus is required");
+       }
+       if(!faculty){
+        errors.push("Faculty is required");
+        }
+        if(!accomodation){
+            errors.push("Accomodation's name is required");
+            }
+            if(errors.length > 0){
+                
+                document.getElementById("btn").disabled = true;
+                }
+                else{
+                   alert('Congratulations, your profile has been created'); 
+                }
+
+        // Get the URL parameters
+        let params = new URLSearchParams(window.location.search);
+        document.getElementById('fname').value = params.get('fname') || "N/A";
+        document.getElementById('sname').value = params.get('sname') || "N/A";
+        document.getElementById('age').value = params.get('age') || "N/A";
+        document.getElementById('gender').value = params.get('gender') || "N/A";
+        document.getElementById('Student_Number').value = params.get('stdNum') || "N/A";
+        document.getElementById('Student_Email').value = params.get('stdEmail') || "N/A";
+
+    </script>
+</body>
+</html>
