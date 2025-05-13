@@ -1,85 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Bstyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <title>Bookings</title>
-    <nav>
-        <ul class="navigation">
-            <h2>M228 hikes</h2>
-            <li><a class="active" href="index.html">Home</a></li>
-        </ul>
-    </nav> 
+
 </head>
+
 <body>
+    <div class="navigation">
+        <h2>M228 hikes</h2>
+        <li><a class="active" href="index.html">Home</a></li>
+    </div>
+
     <form id="form">
         <div class="intro">
             <h3>BOOKING</h3>
-    <div class="name">    
-        <input type="text" id="Name" name="Name" placeholder="Enter Your Name" required>
-    </div>
+            <div class="name">
+                <input type="text" id="Name" name="Name" placeholder="Enter Your Name" required>
+            </div>
 
-   <div class="surname">
-        <input type="text" id="Surname" name="Surname" placeholder="Enter Your Surname" required>
-    </div>
-    
-    <div class="location">
-        <select id="location" name="location" required>
-            <option value="">Select</option>
-            <option value="Table Mountain">Table Mountain</option>
-            <option value="Devils Peak">Devil's Peak</option>
-            <option value="Ukhahlamba">uKhahlamba-Drakensberg</option>
-            <option value="Lions Head">Lion's Head</option>
-        </select>
-    </div>
-    
-    <div class="retLocation">
-        <input type="button" value="Select" class="select" onclick="retLocation()">
-    </div>
+            <div class="surname">
+                <input type="text" id="Surname" name="Surname" placeholder="Enter Your Surname" required>
+            </div>
 
-    </div>
+            <div class="location">
+                <select id="location" name="location" required>
+                    <option value="">Select</option>
+                    <option value="Table Mountain">Table Mountain</option>
+                    <option value="Devils Peak">Devil's Peak</option>
+                    <option value="Ukhahlamba">uKhahlamba-Drakensberg</option>
+                    <option value="Lions Head">Lion's Head</option>
+                </select>
+            </div>
+
+            <div class="retLocation">
+                <input type="button" id="btnSelect" value="Select" class="select" onclick="retLocation()">
+                <button type="button" id="btnConfirm" onclick="confirmBooking()">Confirm</button>
+            </div>
+        </div>
     </form>
 
-    <label for="selectedLocation">Confirm booking for selected Location</label>
-        <input type="button" value="Confirm" onclick="confirmBooking()">
 
-        <script>
-            let selectedOption = ''; // Declare selectedOption in the global scope
-    
-            function retLocation() {
-                const name = document.getElementById('Name').value
-                const surname = document.getElementById('Surname').value
-                const selectElement = document.getElementById('location');
-                selectedOption = selectElement.options[selectElement.selectedIndex].value; 
 
-                if (!name || !surname) {
-                    return alert('please write name and surname')
-                }
-    
-                if (selectedOption === 'Ukhahlamba') { 
-                    return alert('The price for Ukhahlamba hike is R150 pp');
-                } else if (selectedOption === 'Table Mountain') {
-                    return alert('The price for the Table Mountain hike is R200 pp'); 
-                } else if (selectedOption === 'Devils Peak') {
-                    return alert('The price for the Devils Peak hike is R100 pp');
-                } else if (selectedOption === 'Lions Head') {
-                    return alert('The price for Lions Head hike is R150 pp');
-                } else {
-                    return alert('error: select a trail');
-                
-                }
+    <script>
+        let selectedOption = ''; // Declare selectedOption in the global scope
+        let select = document.getElementById('btnSelect'); // Get the select element
+
+        function retLocation() {
+            const name = document.getElementById('Name').value
+            const surname = document.getElementById('Surname').value
+            const selectElement = document.getElementById('location');
+            selectedOption = selectElement.options[selectElement.selectedIndex].value;
+
+            if (!name || !surname) {
+                return alert('please write name and surname')
             }
-    
-            function confirmBooking() {
-                const name = document.getElementById('Name').value;
-                const surname = document.getElementById('Surname').value;
-                if (selectedOption) {
-                    alert('Booking confirmed for ' + name + ' ' + surname + ' at ' + selectedOption);
-                } else {
-                    alert('error select a trail');
-                }
+            let priceMessage = '';
+            if (selectedOption === 'Ukhahlamba') {
+                return alert('The price for Ukhahlamba hike is R150 pp');
+            } else if (selectedOption === 'Table Mountain') {
+                return alert('The price for the Table Mountain hike is R200 pp');
+            } else if (selectedOption === 'Devils Peak') {
+                return alert('The price for the Devils Peak hike is R100 pp');
+            } else if (selectedOption === 'Lions Head') {
+                return alert('The price for Lions Head hike is R150 pp');
+            } else {
+                return alert('error: select a trail');
+
             }
-        </script>
+
+            
+                    
+            }
+
+            function changeColor(){
+                select.addEventListener("click", (e)=>{document.getElementById('btnConfirm').style.backgroundColor = "hsl(29, 97%, 48%)";
+                document.getElementById('btnSelect').style.backgroundColor = "black";
+            })
+            }
+            changeColor();
+
+            function generateBookingID(){
+                let bookingID = Math.floor(Math.random() * 10000) + 1
+                return bookingID;
+            }
+
+        function confirmBooking() {
+            const name = document.getElementById('Name').value;
+            const surname = document.getElementById('Surname').value;
+            if (selectedOption) {
+                alert('Booking confirmed for ' + name + ' ' + surname + ' at ' + selectedOption + ' with booking ID: ' + generateBookingID());
+                alert('please present this booking ID ' + generateBookingID() + ' at the trailhead');
+                document.getElementById('form').reset();
+                document.getElementById('btnConfirm').style.backgroundColor = "black";
+            document.getElementById('btnSelect').style.backgroundColor = "hsl(29, 97%, 48%)";
+                selectedOption = '';
+
+
+            } else {
+                alert('error select a trail');
+            }
+        }
+    </script>
 </body>
+
 </html>
