@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Profile Page</title>
+  <meta name="description" content="Complete your personal details with our modern, user-friendly profile form">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root{
+    --ink:#0f172a; 
+    --muted:#6b7280; 
+    --line:#e5e7eb; 
+    --brand:hsl(216,77%,48%); 
+    --brand-600:hsl(216,77%,40%);
+    --bg:#fafafa; 
+    --card:#ffffff; 
+    --ok:#16a34a;
+  }
+  *{
+    box-sizing:border-box;
+  }
+  html,body{
+    margin:0;
+  }
+  body{
+    font-family:'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; background:var(--bg); 
+    color:var(--ink);
+  }
+
+  /* Top black bar */
+  .topbar{
+    background:#000; 
+    color:#fff; 
+    padding:10px 5%;
+    display:flex; 
+    align-items:center; 
+    justify-content:space-between; 
+    gap:10px;
+  }
+  .topbar a{
+    color:#fff; 
+    text-decoration:none; 
+    font-weight:600; 
+    opacity:.9;
+  }
+  .topbar a:hover{
+    opacity:1;
+  }
+
+  /* Main header under bar */
+  .pagehead{
+    padding:24px 5% 8px;
+    display:flex; 
+    align-items:end; 
+    justify-content:space-between; 
+    gap:16px;
+    border-bottom:1px solid var(--line);
+    background:#fff;
+  }
+  .pagehead h1{
+    margin:0; 
+    font-weight:800; 
+    letter-spacing:.2px;
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+  .crumb a{
+    color:var(--brand); 
+    text-decoration:none; 
+    font-weight:600;
+  }
+  .crumb a:hover{
+    color:var(--brand-600);
+  }
+  
+
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .profile-card {
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 8px 32px -8px rgba(30, 41, 59, 0.12);
+      overflow: hidden;
+    }
+
+    .card-header {
+      padding: 2rem;
+      border-bottom: 1px solid #e2e8f0;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    }
+
+    .card-title {
+      font-size: 2rem;
+      font-weight: 700;
+      background: #1b0066ff;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-description {
+      color: #64748b;
+      font-size: 1rem;
+    }
+
+    .card-content {
+      padding: 2rem;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .form-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .full-width {
+        grid-column: 1 / -1;
+      }
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    label {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #334155;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    label i {
+      color: #1b0066ff;
+      width: 1rem;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"] {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 0.75rem;
+      font-size: 0.875rem;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      background: white;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #1b0066ff;
+      box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.1);
+    }
+
+    input::placeholder {
+      color: #94a3b8;
+    }
+
+    .error-message {
+      color: #ef4444;
+      font-size: 0.75rem;
+      display: none;
+    }
+
+    .error-message.show {
+      display: block;
+    }
+
+    input.error {
+      border-color: #ef4444;
+    }
+
+    .file-upload {
+      border: 2px dashed #cbd5e1;
+      border-radius: 0.75rem;
+      padding: 2rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      background: #f8fafc;
+    }
+
+    .file-upload:hover,
+    .file-upload.drag-over {
+      border-color: #1b0066ff;
+      background: #e0f2fe;
+    }
+
+    .file-upload i {
+      font-size: 2.5rem;
+      color: #94a3b8;
+      margin-bottom: 1rem;
+    }
+
+    .file-upload p {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #1e293b;
+      margin-bottom: 0.25rem;
+    }
+
+    .file-upload span {
+      font-size: 0.75rem;
+      color: #64748b;
+    }
+
+    .file-upload .file-name {
+      margin-top: 0.5rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #1b0066ff;
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 0.875rem 1.5rem;
+      background: linear-gradient(135deg, #1b0066ff 0%, rgb(119, 70, 255) 100%);
+      color: white;
+      border: none;
+      border-radius: 0.75rem;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 16px -4px rgba(8, 145, 178, 0.3);
+      margin-top: 1rem;
+    }
+
+    .submit-btn:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 32px -8px rgba(8, 145, 178, 0.4);
+    }
+
+    .submit-btn:active {
+      transform: scale(0.98);
+    }
+
+    .submit-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: white;
+      padding: 1rem 1.5rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 8px 32px -8px rgba(30, 41, 59, 0.2);
+      display: none;
+      align-items: center;
+      gap: 0.75rem;
+      z-index: 1000;
+      animation: slideIn 0.3s ease-out;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    .toast.show {
+      display: flex;
+    }
+
+    .toast.success {
+      border-left: 4px solid #10b981;
+    }
+
+    .toast.error {
+      border-left: 4px solid #ef4444;
+    }
+
+    .toast i {
+      font-size: 1.25rem;
+    }
+
+    .toast.success i {
+      color: #10b981;
+    }
+
+    .toast.error i {
+      color: #ef4444;
+    }
+
+    .toast-message {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #1e293b;
+    }
+  </style>
+</head>
+<body>
+    <!-- Slim top bar -->
+<div class="topbar">
+  <div><a href="profile.html"><i class="fa-regular fa-user"></i></a></div>
+  <div style="font-weight:800; letter-spacing:.3px">MASHOBANE & CO</div>
+  <div><a href="cart.php"><i class="fa-solid fa-bag-shopping"></i> <span class="cart-count">(<?= $totalItems ?>)</span></a></div>
+</div>
+
+<!-- Page header -->
+<div class="pagehead">
+  <h1 class="card-title">Your Personal Details</h1>
+  <div class="crumb">
+    <a href="index.php"><i class="fa-solid fa-arrow-left"></i> Continue Shopping</a>
+  </div>
+</div>
+  <div class="container">
+    <div class="profile-card">
+      <div class="card-header">
+        
+        <p class="card-description">Please fill in your information to complete your profile</p>
+      </div>
+      <div class="card-content">
+        <form id="profile-form">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="firstname">
+                <i class="fas fa-user"></i>
+                First name
+              </label>
+              <input type="text" id="firstname" placeholder="Enter first name" required>
+              <span class="error-message" id="firstname-error">First name must be at least 2 characters</span>
+            </div>
+
+            <div class="form-group">
+              <label for="lastname">
+                <i class="fas fa-user"></i>
+                Last name
+              </label>
+              <input type="text" id="lastname" placeholder="Enter last name" required>
+              <span class="error-message" id="lastname-error">Last name must be at least 2 characters</span>
+            </div>
+
+            <div class="form-group">
+              <label for="dob">
+                <i class="fas fa-calendar"></i>
+                Date of birth
+              </label>
+              <input type="text" id="dob" placeholder="MM/DD/YYYY" required>
+              <span class="error-message" id="dob-error">Date must be in MM/DD/YYYY format</span>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">
+                <i class="fas fa-phone"></i>
+                Contact number
+              </label>
+              <input type="tel" id="phone" placeholder="Enter phone number" required>
+              <span class="error-message" id="phone-error">Phone number must be at least 10 digits</span>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="email">
+                <i class="fas fa-envelope"></i>
+                Email Address
+              </label>
+              <input type="email" id="email" placeholder="Enter your email address" required>
+              <span class="error-message" id="email-error">Please enter a valid email address</span>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="address">
+                <i class="fas fa-home"></i>
+                Street Address
+              </label>
+              <input type="text" id="address" placeholder="Enter your street address" required>
+              <span class="error-message" id="address-error">Address must be at least 5 characters</span>
+            </div>
+
+            <div class="form-group">
+              <label for="suburb">
+                <i class="fas fa-map-pin"></i>
+                Suburb
+              </label>
+              <input type="text" id="suburb" placeholder="Enter your suburb" required>
+              <span class="error-message" id="suburb-error">Suburb is required</span>
+            </div>
+
+            <div class="form-group">
+              <label for="city">
+                <i class="fas fa-city"></i>
+                City
+              </label>
+              <input type="text" id="city" placeholder="Enter your city" required>
+              <span class="error-message" id="city-error">City is required</span>
+            </div>
+
+            <div class="form-group">
+              <label for="postalcode">
+                <i class="fas fa-mail-bulk"></i>
+                Postal Code
+              </label>
+              <input type="text" id="postalcode" placeholder="Enter your postal code" required>
+              <span class="error-message" id="postalcode-error">Postal code is required</span>
+            </div>
+
+            <div class="form-group">
+              <label for="province">
+                <i class="fas fa-globe"></i>
+                Province
+              </label>
+              <input type="text" id="province" placeholder="Enter your province" required>
+              <span class="error-message" id="province-error">Province is required</span>
+            </div>
+
+            <div class="form-group full-width">
+              <label>
+                <i class="fas fa-id-card"></i>
+                Upload a photo of your card
+              </label>
+              <div class="file-upload" id="file-upload">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <p>Click to upload or drag and drop</p>
+                <span>PNG, JPG, GIF (max 5MB)</span>
+                <div class="file-name" id="file-name"></div>
+                <input type="file" id="cardphoto" accept="image/png,image/jpeg,image/gif">
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="submit-btn" id="submit-btn">Save and Continue</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">
+    <i class="fas fa-check-circle"></i>
+    <span class="toast-message" id="toast-message"></span>
+  </div>
+
+  <script>
+    // Form validation
+    const form = document.getElementById('profile-form');
+    const fileUpload = document.getElementById('file-upload');
+    const fileInput = document.getElementById('cardphoto');
+    const fileName = document.getElementById('file-name');
+    const submitBtn = document.getElementById('submit-btn');
+    const toast = document.getElementById('toast');
+    const toastMessage = document.getElementById('toast-message');
+
+    let uploadedFile = null;
+
+    // Validation rules
+    const validators = {
+      firstname: (value) => value.trim().length >= 2,
+      lastname: (value) => value.trim().length >= 2,
+      dob: (value) => /^\d{2}\/\d{2}\/\d{4}$/.test(value),
+      phone: (value) => value.replace(/\D/g, '').length >= 10,
+      email: (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value),
+      address: (value) => value.trim().length >= 5,
+      suburb: (value) => value.trim().length >= 2,
+      city: (value) => value.trim().length >= 2,
+      postalcode: (value) => value.trim().length >= 3,
+      province: (value) => value.trim().length >= 2
+    };
+
+    // Show toast
+    function showToast(message, type = 'success') {
+      toast.className = `toast ${type} show`;
+      toastMessage.textContent = message;
+      const icon = toast.querySelector('i');
+      icon.className = type === 'success' ? 'fas fa-check-circle' : 'fas fa-exclamation-circle';
+      
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
+    }
+
+    // Validate field
+    function validateField(fieldId) {
+      const field = document.getElementById(fieldId);
+      const errorElement = document.getElementById(`${fieldId}-error`);
+      const isValid = validators[fieldId](field.value);
+
+      if (isValid) {
+        field.classList.remove('error');
+        errorElement.classList.remove('show');
+      } else {
+        field.classList.add('error');
+        errorElement.classList.add('show');
+      }
+
+      return isValid;
+    }
+
+    // Add blur validation to all fields
+    Object.keys(validators).forEach(fieldId => {
+      const field = document.getElementById(fieldId);
+      field.addEventListener('blur', () => validateField(fieldId));
+    });
+
+    // File upload handling
+    fileUpload.addEventListener('click', () => fileInput.click());
+
+    fileInput.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        if (file.size > 5 * 1024 * 1024) {
+          showToast('File size must be less than 5MB', 'error');
+          return;
+        }
+        uploadedFile = file;
+        fileName.textContent = `✓ ${file.name}`;
+        showToast('File uploaded successfully', 'success');
+      }
+    });
+
+    // Drag and drop
+    fileUpload.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      fileUpload.classList.add('drag-over');
+    });
+
+    fileUpload.addEventListener('dragleave', () => {
+      fileUpload.classList.remove('drag-over');
+    });
+
+    fileUpload.addEventListener('drop', (e) => {
+      e.preventDefault();
+      fileUpload.classList.remove('drag-over');
+      
+      const file = e.dataTransfer.files[0];
+      if (file) {
+        if (file.size > 5 * 1024 * 1024) {
+          showToast('File size must be less than 5MB', 'error');
+          return;
+        }
+        uploadedFile = file;
+        fileName.textContent = `✓ ${file.name}`;
+        showToast('File uploaded successfully', 'success');
+      }
+    });
+
+    // Form submission
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Validate all fields
+      let isValid = true;
+      Object.keys(validators).forEach(fieldId => {
+        if (!validateField(fieldId)) {
+          isValid = false;
+        }
+      });
+
+      if (!isValid) {
+        showToast('Please fix the errors in the form', 'error');
+        return;
+      }
+
+      // Disable button and show loading
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Saving...';
+
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1000));
+
+      // Collect form data
+      const formData = {
+        firstname: document.getElementById('firstname').value,
+        lastname: document.getElementById('lastname').value,
+        dob: document.getElementById('dob').value,
+        phone: document.getElementById('phone').value,
+        email: document.getElementById('email').value,
+        address: document.getElementById('address').value,
+        suburb: document.getElementById('suburb').value,
+        city: document.getElementById('city').value,
+        postalcode: document.getElementById('postalcode').value,
+        province: document.getElementById('province').value,
+        cardPhoto: uploadedFile ? uploadedFile.name : null
+      };
+
+      console.log('Form submitted:', formData);
+      showToast('Profile saved successfully!', 'success');
+
+      // Re-enable button
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Save and Continue';
+    });
+
+    // Auto-format date input
+    document.getElementById('dob').addEventListener('input', (e) => {
+      let value = e.target.value.replace(/\D/g, '');
+      if (value.length >= 2) {
+        value = value.substring(0, 2) + '/' + value.substring(2);
+      }
+      if (value.length >= 5) {
+        value = value.substring(0, 5) + '/' + value.substring(5, 9);
+      }
+      e.target.value = value;
+    });
+  </script>
+</body>
+</html>
